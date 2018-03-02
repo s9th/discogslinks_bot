@@ -1,0 +1,1 @@
+bot: ruby src/DiscogsLinks.rb
