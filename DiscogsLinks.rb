@@ -3,8 +3,8 @@ require 'discogs-wrapper'
 require 'nokogiri'
 require 'httparty'
 require 'dotenv'
-require_relative 'src/providers/DiscogsRelease.rb'
-require_relative 'src/providers/BandcampRelease.rb'
+require_relative 'providers/DiscogsRelease.rb'
+require_relative 'providers/BandcampRelease.rb'
 
 LinksNumber = 5
 

@@ -1,1 +1,1 @@
-bot: ruby src/DiscogsLinks.rb
+bot: ruby DiscogsLinks.rb
