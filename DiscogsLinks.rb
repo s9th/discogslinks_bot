@@ -13,14 +13,12 @@ def getmusiclinks(provider)
 end
 
 Telegram::Bot::Client.run(ENV["TelegramToken"]) do |bot|
-    provider = nil
     bot.listen do |message|
         case message.text
         when '/music'
-            provider = DiscogsRelease
+            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(DiscogsRelease), parse_mode: 'HTML', disable_web_page_preview: true)
         when '/music bc'
-            provider = BandcampRelease
+            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(BandcampRelease), parse_mode: 'HTML', disable_web_page_preview: true)
         end
-        bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(provider), parse_mode: 'HTML', disable_web_page_preview: true)
     end
 end
