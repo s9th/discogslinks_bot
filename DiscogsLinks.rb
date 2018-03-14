@@ -16,9 +16,14 @@ Telegram::Bot::Client.run(ENV["TelegramToken"]) do |bot|
     bot.listen do |message|
         case message.text
         when '/music'
-            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(DiscogsRelease), parse_mode: 'HTML', disable_web_page_preview: true)
+            sendmsg(DiscogsRelease)
         when '/music bc'
-            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(BandcampRelease), parse_mode: 'HTML', disable_web_page_preview: true)
+            sendmsg(BandcampRelease)
         end
     end
+
+    def sendmsg(provider)
+        bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks(provider), parse_mode: 'HTML', disable_web_page_preview: true)
+    end
+
 end
