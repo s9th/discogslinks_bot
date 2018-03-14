@@ -13,7 +13,7 @@ def getmusiclinks(provider)
 end
 
 Telegram::Bot::Client.run(ENV["TelegramToken"]) do |bot|
-    provider = class
+    provider = nil
     bot.listen do |message|
         case message.text
         when '/music'
