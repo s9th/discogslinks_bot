@@ -10,6 +10,7 @@ LinksNumber = 5
 class DiscogsRelease
 
     HostURL = 'https://www.discogs.com'
+    APIURL = 'https://api.discogs.com'
 
     # generate a number of random valid release ids
     def self.random_release(n)
@@ -56,12 +57,24 @@ class DiscogsRelease
 
     # convert object to string displayed in chat
     def to_s
-        "#{url} #{tags}"
+        "#{url} #{artists}-#{album} #{tags}"
     end
 
     # return release URL
     def url
         "#{HostURL}/release/#{@id}"
+    end
+
+    # return artists
+    def artists
+        return unless valid?
+        release_data.artists.map{|r| r.name}.join(', ')
+    end
+
+    # return album
+    def album
+        return unless valid?
+        release_data.title
     end
 
     #return release tags
