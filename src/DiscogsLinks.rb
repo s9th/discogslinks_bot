@@ -57,7 +57,7 @@ class DiscogsRelease
 
     # convert object to string displayed in chat
     def to_s
-        "#{url} #{artists} - #{album} | #{tags}"
+        "<a href=\"#{url}\">#{artists} - #{album}</a> #{tags}"
     end
 
     # return release URL
