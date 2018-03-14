@@ -57,7 +57,7 @@ class DiscogsRelease
 
     # convert object to string displayed in chat
     def to_s
-        "#{url} #{artists}-#{album} #{tags}"
+        "#{url} #{artists} - #{album} | #{tags}"
     end
 
     # return release URL
@@ -99,7 +99,7 @@ end
 Telegram::Bot::Client.run(ENV["TelegramToken"]) do |bot|
     bot.listen do |message|
         if message.text == '/music'
-            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks, parse_mode: 'HTML')
+            bot.api.send_message(chat_id: message.chat.id, text: getmusiclinks, parse_mode: 'HTML', disable_web_page_preview: true)
         end
     end
 end
