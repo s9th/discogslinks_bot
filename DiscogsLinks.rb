@@ -2,7 +2,7 @@ require 'telegram/bot'
 require 'discogs-wrapper'
 require 'nokogiri'
 require 'httparty'
-require 'dotenv'
+require 'dotenv/load'
 require_relative 'providers/DiscogsRelease.rb'
 require_relative 'providers/BandcampRelease.rb'
 
