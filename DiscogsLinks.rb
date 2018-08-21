@@ -13,7 +13,7 @@ def getmusiclinks(provider)
     provider.random_release(LinksNumber).map{|release| release.to_s}.join("\n")
 end
 
-Telegram::Bot::Client.run(ENV["TelegramToken"]) do |bot|
+Telegram::Bot::Client.run(ENV["TELEGRAM_TOKEN"]) do |bot|
     bot.listen do |message|
         provider = commandMapper[message.text]
         if (provider)
