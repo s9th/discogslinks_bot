@@ -32,7 +32,7 @@ GEM
       rack
       rake (>= 0.8.1)
     rack (2.2.2)
-    rake (12.3.1)
+    rake (13.0.1)
     telegram-bot-ruby (0.8.6.1)
       faraday
       inflecto
