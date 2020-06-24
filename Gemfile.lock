@@ -31,7 +31,7 @@ GEM
     passenger (5.3.4)
       rack
       rake (>= 0.8.1)
-    rack (2.2.2)
+    rack (2.2.3)
     rake (13.0.1)
     telegram-bot-ruby (0.8.6.1)
       faraday
